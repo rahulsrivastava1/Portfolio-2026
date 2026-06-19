@@ -130,7 +130,7 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="glass-card rounded-2xl overflow-hidden glow-border"
+              className="hidden lg:block glass-card rounded-2xl overflow-hidden glow-border"
             >
               {/* Window chrome */}
               <div className="flex items-center gap-2 px-4 py-3 border-b border-[var(--border-subtle)]">

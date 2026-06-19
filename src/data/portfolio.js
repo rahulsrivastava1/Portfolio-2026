@@ -12,7 +12,7 @@ export const personal = {
   email: "srivastavar433@gmail.com",
   github: "https://github.com/rahulsrivastava1",
   linkedin: "https://www.linkedin.com/in/rahulsriv/",
-  resume: "https://drive.google.com/file/d/1GWz3gdkwVgwf--e-DrDy_rATMJQAX2V_/view?usp=sharing",
+  resume: "https://drive.google.com/drive/folders/1cYVTCnDEiNvAqv0YTybq7L2WnuneLp8y?usp=drive_link",
 };
 
 export const experiences = [
@@ -119,8 +119,10 @@ export const projects = [
   {
     id: 3,
     title: "Ecommerce",
-    description: "A full-featured e-commerce platform for Electronics and Books with product filtering, dynamic cart management, price breakdowns, and a complete user authentication flow.",
-    longDescription: "A production-ready e-commerce web application built with React and Material UI, covering two product verticals — Electronics (Laptops, Keyboards, Mice) and Books (Sci-Fi, Romance, Action). Users can browse categorized product listings, filter by brand and customer ratings, and sort by price. Each product page displays detailed descriptions, stock status, and service badges like free shipping and 30-day replacement. The shopping cart supports real-time quantity updates, item removal, and an itemised price breakdown including discounts and delivery charges. The app also includes a complete authentication system with login (with Remember Me), sign-up with form validation, and a forgot-password flow. Fully responsive across all screen sizes and deployed on Netlify.",
+    description:
+      "A full-featured e-commerce platform for Electronics and Books with product filtering, dynamic cart management, price breakdowns, and a complete user authentication flow.",
+    longDescription:
+      "A production-ready e-commerce web application built with React and Material UI, covering two product verticals — Electronics (Laptops, Keyboards, Mice) and Books (Sci-Fi, Romance, Action). Users can browse categorized product listings, filter by brand and customer ratings, and sort by price. Each product page displays detailed descriptions, stock status, and service badges like free shipping and 30-day replacement. The shopping cart supports real-time quantity updates, item removal, and an itemised price breakdown including discounts and delivery charges. The app also includes a complete authentication system with login (with Remember Me), sign-up with form validation, and a forgot-password flow. Fully responsive across all screen sizes and deployed on Netlify.",
     tech: ["React", "Vite", "Material UI", "CSS"],
     category: "Frontend",
     color: "#f59e0b",
@@ -155,7 +157,7 @@ export const achievements = [
     platform: "GeeksforGeeks",
     icon: "pen",
     link: "https://www.geeksforgeeks.org/git/simple-and-concise-git-commands-that-every-software-developer-should-know/",
-    color: "#22d3ee"
+    color: "#22d3ee",
   },
   {
     id: 2,
@@ -165,7 +167,7 @@ export const achievements = [
     platform: "Medium",
     icon: "book",
     link: "https://medium.com/@srivastavar433/deploying-mern-stack-application-70539a7ac397",
-    color: "#6366f1"
+    color: "#6366f1",
   },
   {
     id: 3,
@@ -175,7 +177,7 @@ export const achievements = [
     platform: "Medium",
     icon: "book",
     link: "https://medium.com/@srivastavar433/deploying-react-app-on-github-ed7cb3993f41",
-    color: "#6366f1"
+    color: "#6366f1",
   },
   {
     id: 4,
@@ -185,6 +187,6 @@ export const achievements = [
     platform: "Medium",
     icon: "book",
     link: "https://medium.com/@srivastavar433/scaling-from-1-user-to-1m-users-ddeb8d9bf8db",
-    color: "#6366f1"
+    color: "#6366f1",
   },
 ];
