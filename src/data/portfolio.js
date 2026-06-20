@@ -113,7 +113,6 @@ export const projects = [
     color: "#6366f1",
     links: {
       github: "https://github.com/rahulsrivastava1?tab=repositories&q=memories&type=&language=&sort=",
-      live: "#",
     },
   },
   {
@@ -143,7 +142,6 @@ export const projects = [
     color: "#f59e0b",
     links: {
       github: "https://github.com/rahulsrivastava1/News-App",
-      live: "#",
     },
   },
 ];

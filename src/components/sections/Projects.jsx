@@ -5,6 +5,66 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, GitBranch, X, Layers, Zap } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import { projects } from "@/data/portfolio";
+import { getLiveDemoUrl } from "@/lib/utils";
+
+const liveDemoUnavailableTitle = "Live demo not available";
+
+function LiveDemoLink({ links, color, variant = "card", onClick }) {
+  const liveUrl = getLiveDemoUrl(links);
+
+  if (variant === "modal") {
+    if (!liveUrl) {
+      return (
+        <span
+          aria-disabled="true"
+          title={liveDemoUnavailableTitle}
+          className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-[var(--text-muted)] border border-[var(--border-subtle)] opacity-50 cursor-not-allowed select-none"
+        >
+          <ExternalLink size={16} /> Live Demo
+        </span>
+      );
+    }
+
+    return (
+      <a
+        href={liveUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all"
+        style={{
+          background: `linear-gradient(135deg, ${color}cc, ${color}88)`,
+          boxShadow: `0 4px 20px ${color}33`,
+        }}
+      >
+        <ExternalLink size={16} /> Live Demo
+      </a>
+    );
+  }
+
+  if (!liveUrl) {
+    return (
+      <span
+        aria-disabled="true"
+        title={liveDemoUnavailableTitle}
+        className="flex items-center gap-1.5 text-xs font-medium text-[var(--text-muted)] opacity-50 cursor-not-allowed select-none"
+      >
+        <ExternalLink size={13} /> Live Demo
+      </span>
+    );
+  }
+
+  return (
+    <a
+      href={liveUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={onClick}
+      className="flex items-center gap-1.5 text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--accent-secondary)] transition-colors"
+    >
+      <ExternalLink size={13} /> Live Demo
+    </a>
+  );
+}
 
 /**
  * Project card with hover reveal and click-to-expand modal.
@@ -71,15 +131,11 @@ function ProjectCard({ project, onClick }) {
           >
             <GitBranch size={13} /> Code
           </a>
-          <a
-            href={project.links.live}
-            target="_blank"
-            rel="noopener noreferrer"
+          <LiveDemoLink
+            links={project.links}
+            variant="card"
             onClick={(e) => e.stopPropagation()}
-            className="flex items-center gap-1.5 text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--accent-secondary)] transition-colors"
-          >
-            <ExternalLink size={13} /> Live Demo
-          </a>
+          />
           <span className="ml-auto text-xs text-[var(--accent-primary)] opacity-0 group-hover:opacity-100 transition-opacity font-medium">
             View details →
           </span>
@@ -185,18 +241,7 @@ function ProjectModal({ project, onClose }) {
               >
                 <GitBranch size={16} /> View Code
               </a>
-              <a
-                href={project.links.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all"
-                style={{
-                  background: `linear-gradient(135deg, ${project.color}cc, ${project.color}88)`,
-                  boxShadow: `0 4px 20px ${project.color}33`,
-                }}
-              >
-                <ExternalLink size={16} /> Live Demo
-              </a>
+              <LiveDemoLink links={project.links} color={project.color} variant="modal" />
             </div>
           </div>
         </motion.div>
